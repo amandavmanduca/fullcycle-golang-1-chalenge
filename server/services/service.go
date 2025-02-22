@@ -1,7 +1,7 @@
 package services
 
 import (
-	"server/interfaces"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
 )
 
 func NewServicesContainer(repos interfaces.RepositoriesContainer, clients interfaces.ClientsContainer) *interfaces.ServicesContainer {

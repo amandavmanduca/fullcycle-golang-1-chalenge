@@ -4,7 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"net/http"
-	"server/interfaces"
+
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
 )
 
 type HandlersContainer struct {

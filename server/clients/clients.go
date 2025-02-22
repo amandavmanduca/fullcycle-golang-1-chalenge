@@ -1,9 +1,10 @@
 package clients
 
 import (
-	"server/clients/awesomeapi"
-	"server/interfaces"
 	"time"
+
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/clients/awesomeapi"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
 )
 
 func NewClientsContainer() interfaces.ClientsContainer {

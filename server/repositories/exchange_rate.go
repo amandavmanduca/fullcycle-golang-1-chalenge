@@ -2,10 +2,11 @@ package repositories
 
 import (
 	"context"
-	"server/database"
-	"server/interfaces"
-	"server/structs"
 	"time"
+
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/database"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/structs"
 )
 
 type exchangeRateRepository struct {

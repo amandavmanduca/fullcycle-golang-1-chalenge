@@ -2,7 +2,8 @@ package interfaces
 
 import (
 	"context"
-	"server/structs"
+
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/structs"
 )
 
 type ExchangeRateRepositoryInterface interface {

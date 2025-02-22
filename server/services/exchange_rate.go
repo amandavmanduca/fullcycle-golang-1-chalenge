@@ -2,8 +2,9 @@ package services
 
 import (
 	"context"
-	"server/interfaces"
-	"server/structs"
+
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/structs"
 
 	"github.com/google/uuid"
 )

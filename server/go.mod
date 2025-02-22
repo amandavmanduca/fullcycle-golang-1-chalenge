@@ -1,4 +1,4 @@
-module server
+module github.com/amandavmanduca/fullcycle-golang-1-chalenge/server
 
 go 1.22.3
 

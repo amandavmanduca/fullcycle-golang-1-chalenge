@@ -3,9 +3,10 @@ package awesomeapi
 import (
 	"context"
 	"encoding/json"
-	"server/interfaces"
-	"server/structs"
 	"strconv"
+
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/structs"
 )
 
 type AwesomeApiClient struct {

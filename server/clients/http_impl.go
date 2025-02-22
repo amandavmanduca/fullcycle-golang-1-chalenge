@@ -4,8 +4,9 @@ import (
 	"context"
 	"io"
 	"net/http"
-	"server/interfaces"
 	"time"
+
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
 )
 
 type HttpImpl struct {

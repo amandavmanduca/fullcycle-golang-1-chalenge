@@ -3,7 +3,8 @@ package handlers
 import (
 	"context"
 	"net/http"
-	"server/interfaces"
+
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
 )
 
 type exchangeRateHandler struct {

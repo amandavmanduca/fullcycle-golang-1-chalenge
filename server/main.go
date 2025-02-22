@@ -4,11 +4,12 @@ import (
 	"context"
 	"fmt"
 	"net/http"
-	"server/clients"
-	"server/database"
-	"server/handlers"
-	"server/repositories"
-	"server/services"
+
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/clients"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/database"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/handlers"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/repositories"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/services"
 
 	"github.com/google/uuid"
 )

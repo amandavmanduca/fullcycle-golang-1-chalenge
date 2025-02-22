@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"server/database"
-	"server/interfaces"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/database"
+	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
 )
 
 func NewRepositoriesContainer(db database.Database) *interfaces.RepositoriesContainer {
