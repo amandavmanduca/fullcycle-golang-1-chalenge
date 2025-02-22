@@ -1,9 +1,12 @@
 package interfaces
 
-import "context"
+import (
+	"context"
+	"net/http"
+)
 
 type HttpClientInterface interface {
-	Get(ctx context.Context, path string) ([]byte, error)
+	Get(ctx context.Context, path string) (*http.Response, error)
 }
 
 type AwesomeApiClientInterface interface {

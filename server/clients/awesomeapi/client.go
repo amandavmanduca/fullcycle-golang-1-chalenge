@@ -3,6 +3,7 @@ package awesomeapi
 import (
 	"context"
 	"encoding/json"
+	"io"
 	"strconv"
 
 	"github.com/amandavmanduca/fullcycle-golang-1-chalenge/server/interfaces"
@@ -20,7 +21,13 @@ func NewAwesomeApiClient(httpClient interfaces.HttpClientInterface) interfaces.A
 }
 
 func (c AwesomeApiClient) GetExchangeRate(ctx context.Context) (*float64, error) {
-	res, err := c.httpClient.Get(ctx, "/json/last/USD-BRL")
+	resp, err := c.httpClient.Get(ctx, "/json/last/USD-BRL")
+	if err != nil {
+		return nil, err
+	}
+
+	defer resp.Body.Close()
+	res, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}

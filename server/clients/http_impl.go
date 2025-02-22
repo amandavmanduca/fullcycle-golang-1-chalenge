@@ -2,7 +2,7 @@ package clients
 
 import (
 	"context"
-	"io"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -24,7 +24,7 @@ func NewHttpClient(baseUrl string, timeout *time.Duration) interfaces.HttpClient
 	}
 }
 
-func (i HttpImpl) Get(ctx context.Context, path string) ([]byte, error) {
+func (i HttpImpl) Get(ctx context.Context, path string) (*http.Response, error) {
 	if i.getMethodTimeout != nil {
 		ctxWithTimeout, cancel := context.WithTimeout(ctx, *i.getMethodTimeout)
 		ctx = ctxWithTimeout
@@ -39,14 +39,10 @@ func (i HttpImpl) Get(ctx context.Context, path string) ([]byte, error) {
 	resp, err := i.client.Do(req)
 	if err != nil {
 		if ctx.Err() == context.DeadlineExceeded {
+			fmt.Println("context deadline exceeded")
 			return nil, context.DeadlineExceeded
 		}
 		return nil, err
 	}
-	defer resp.Body.Close()
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return nil, err
-	}
-	return body, nil
+	return resp, nil
 }
