@@ -8,7 +8,7 @@ import (
 	"github.com/google/uuid"
 )
 
-type ExchangeRateService struct {
+type exchangeRateService struct {
 	exchangeRateRepository interfaces.ExchangeRateRepositoryInterface
 	awesomeClientApi       interfaces.AwesomeApiClientInterface
 }
@@ -17,13 +17,13 @@ func NewExchangeRateService(
 	exchangeRateRepository interfaces.ExchangeRateRepositoryInterface,
 	awesomeClientApi interfaces.AwesomeApiClientInterface,
 ) interfaces.ExchangeRateServiceInterface {
-	return &ExchangeRateService{
+	return &exchangeRateService{
 		exchangeRateRepository: exchangeRateRepository,
 		awesomeClientApi:       awesomeClientApi,
 	}
 }
 
-func (s *ExchangeRateService) Get(ctx context.Context) (structs.ExchangeRate, error) {
+func (s *exchangeRateService) Get(ctx context.Context) (structs.ExchangeRate, error) {
 	value, err := s.awesomeClientApi.GetExchangeRate(ctx)
 	if err != nil || value == nil {
 		return structs.ExchangeRate{}, err
@@ -39,7 +39,7 @@ func (s *ExchangeRateService) Get(ctx context.Context) (structs.ExchangeRate, er
 	return res, nil
 }
 
-func (s *ExchangeRateService) create(ctx context.Context, data structs.ExchangeRate) (structs.ExchangeRate, error) {
+func (s *exchangeRateService) create(ctx context.Context, data structs.ExchangeRate) (structs.ExchangeRate, error) {
 	err := s.exchangeRateRepository.Create(ctx, data)
 	if err != nil {
 		return structs.ExchangeRate{}, err

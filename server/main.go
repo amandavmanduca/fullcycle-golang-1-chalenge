@@ -48,7 +48,7 @@ func main() {
 	clients := clients.NewClientsContainer()
 	repos := repositories.NewRepositoriesContainer(dbConn)
 	services := services.NewServicesContainer(*repos, clients)
-	handlers := handlers.NewHandlersContainer(services)
+	handlers := handlers.NewHandlersContainer(*services)
 
 	http.HandleFunc("/cotacao", handlers.ExchangeRateHandler.Get)
 	http.ListenAndServe(":8080", nil)

@@ -8,20 +8,20 @@ import (
 	"time"
 )
 
-type ExchangeRateRepository struct {
+type exchangeRateRepository struct {
 	db            database.Database
 	createTimeout *time.Duration
 }
 
 func NewExchangeRateRepository(db database.Database) interfaces.ExchangeRateRepositoryInterface {
 	timeout := time.Millisecond * 10
-	return &ExchangeRateRepository{
+	return &exchangeRateRepository{
 		db:            db,
 		createTimeout: &timeout,
 	}
 }
 
-func (r *ExchangeRateRepository) Create(ctx context.Context, data structs.ExchangeRate) error {
+func (r *exchangeRateRepository) Create(ctx context.Context, data structs.ExchangeRate) error {
 	if r.createTimeout != nil {
 		ctxWithTimeout, cancel := context.WithTimeout(ctx, *r.createTimeout)
 		defer cancel()

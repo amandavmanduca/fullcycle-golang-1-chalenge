@@ -8,7 +8,7 @@ import (
 )
 
 type HandlersContainer struct {
-	ExchangeRateHandler ExchangeRateHandler
+	ExchangeRateHandler exchangeRateHandler
 }
 
 func NewHandlersContainer(services interfaces.ServicesContainer) HandlersContainer {

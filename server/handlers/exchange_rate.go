@@ -6,17 +6,17 @@ import (
 	"server/interfaces"
 )
 
-type ExchangeRateHandler struct {
+type exchangeRateHandler struct {
 	exchangeRateService interfaces.ExchangeRateServiceInterface
 }
 
-func NewExchangeRateHandler(exchangeRateService interfaces.ExchangeRateServiceInterface) ExchangeRateHandler {
-	return ExchangeRateHandler{
+func NewExchangeRateHandler(exchangeRateService interfaces.ExchangeRateServiceInterface) exchangeRateHandler {
+	return exchangeRateHandler{
 		exchangeRateService: exchangeRateService,
 	}
 }
 
-func (h *ExchangeRateHandler) Get(w http.ResponseWriter, r *http.Request) {
+func (h *exchangeRateHandler) Get(w http.ResponseWriter, r *http.Request) {
 	ctx := context.Background()
 
 	res, err := h.exchangeRateService.Get(ctx)
